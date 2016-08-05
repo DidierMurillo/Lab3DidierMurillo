@@ -120,7 +120,7 @@ void Inicio(int** Matriz,int Y,int X,int Z){
                 }
    	
 	}while(Matriz[Y][X]!=3);
-	cout<<"Completaste el recursivo";
+	cout<<"Completaste el Laberinto Felicidades Puntuacion:"<<Puntuacion<<"\n";
 }
 
 void Impresion(int** Matriz,int X){
