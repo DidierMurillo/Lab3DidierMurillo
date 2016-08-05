@@ -3,46 +3,54 @@ using namespace std;
 void Inicio(int**,int,int,int);
 void Impresion(int**,int);
 int Validar(int**,int);
+void Problema();
+
 int main(){
-        int NMatriz;
+ 	int Respuesta=0;
+	cout<<"Ingrese su opcion:";
+	cin>>Respuesta;      
+	if(Respuesta==2){
+			
+	}else{
+	int NMatriz;
         cout<<"Ingrese el tamaño del laberinto";
         cin>>NMatriz;
         int** Matriz=new int*[NMatriz];
         if(NMatriz>=3)
         {
                 for(int i=0;i<NMatriz;i++){
-                        Matriz[i]=new int[NMatriz];
-                        cout<<"Ingrese los numeros de fila del laberinto por digito;"<<"\n";
-                        int Fila[NMatriz];
-                        for (int x = 0; x < NMatriz; ++x)
-                        {
-                                cin>>Fila[x];
-                        }
-                        for (int j = 0; j < NMatriz; ++j)
-                        {
-                                Matriz[i][j]=Fila[j];
-                        }
-                }        
-        }else{
-                cout<<"El tamaño es muy pequeño";
-        } 
+                        	Matriz[i]=new int[NMatriz];
+                       	 cout<<"Ingrese los numeros de fila del laberinto por digito;"<<"\n";
+                       	 int Fila[NMatriz];
+                       	 for (int x = 0; x < NMatriz; ++x)
+                       	 {
+                        	        cin>>Fila[x];
+                        	}
+                       	 for (int j = 0; j < NMatriz; ++j)
+                       	 {
+                        	        Matriz[i][j]=Fila[j];
+                	        }
+        	        }        
+     	   }else{
+                	cout<<"El tamaño es muy pequeño";
+        	} 
 
-        if(Validar(Matriz,NMatriz)==1){
-                cout<<"Matriz invalida ";
-		
-        }else{
-                cout<<"Matriz Valida se procedera a iniciar el juego"<<"\n";
-		Impresion(Matriz,NMatriz);
-		for(int i=0;i<NMatriz;i++){
-			for(int j=0;j<NMatriz;j++){
-				if(Matriz[i][j]==2){
-					Inicio(Matriz,i,j,NMatriz);
-				}	
-			}
-		}		
-        }
+	        if(Validar(Matriz,NMatriz)==1){
+                	cout<<"Matriz invalida ";
+			
+     	   }else{
+        	        cout<<"Matriz Valida se procedera a iniciar el juego"<<"\n";
+			Impresion(Matriz,NMatriz);
+			for(int i=0;i<NMatriz;i++){
+				for(int j=0;j<NMatriz;j++){
+					if(Matriz[i][j]==2){
+						Inicio(Matriz,i,j,NMatriz);
+					}	
+				}
+			}		
+        	}
+	}
 }
-
 
 int Validar(int** Matriz,int NMatriz){
         int Cont3=0;
