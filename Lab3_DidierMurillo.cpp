@@ -175,8 +175,11 @@ void  Binario(int Numero){
 }
 
 void Decimal(int Deci){
-  int Conversion[10],Cont=0,Cont2=0;
-  while(Deci>0){
+  int Conversion[10];
+  int Cont=0;
+  int Cont2=0;
+  int Total=0;
+  while(Deci>=0){
       Conversion[Cont]=Deci%10;
       Deci=Deci/10;
       Cont++;
@@ -184,7 +187,16 @@ void Decimal(int Deci){
   for (int i = 0; i < Cont; ++i)
   {
       if(Conversion[i]==1){
-        
-      }
+	int Sumatoria=Conversion[i]*2;
+	for(int j=0;j<Cont2;j++){
+		Sumatoria=Sumatoria*2;
+	}
+	Total+=Sumatoria;
+	Cont2++;
+      }else{
+	Cont2++;
+      }		
+	
   }
+  cout<<Total;
 }
